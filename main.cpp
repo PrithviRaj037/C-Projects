@@ -1,22 +1,22 @@
-// Write a function to print the reverse of a given string.
 #include <iostream>
-
 using namespace std;
 
-void reverse(string str)
-{
-    if(str.size() == 0){
-        return;
-    }
-    reverse(str.substr(1));
-    cout << str[0];
-}
+int main() {
+    int n;
+    // keep reading “n” until EOF (e.g. user hits Ctrl+D/Ctrl+Z)
+    while (cin >> n) {
+        int a = 1, b = 1, c;
 
-int main()
-{
-    string a = "Practice";
-    reverse(a);
+        if (n >= 1) cout << a;
+        if (n >= 2) cout << " " << b;
+
+        for (int i = 2; i < n; ++i) {
+            c = a + b;
+            cout << " " << c;
+            a = b;
+            b = c;
+        }
+        cout << "\n";    // newline after each sequence
+    }
     return 0;
 }
-// Output
-// ecitcarP
